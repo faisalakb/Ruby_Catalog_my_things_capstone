@@ -103,23 +103,22 @@ loop do
     new_author = Author.new(1, first_name, last_name)
     authors << new_author
     puts 'Author added successfully.'
-    puts authors
   when 8
     puts 'Add genre:'
     print 'Genre Name: '
-    new_genre = gets.chomp
-    genre = Genre.new(1, new_genre)
+    genre = gets.chomp
+    new_genre = Genre.new(1, genre)
     genres << new_genre
     puts 'Genre added successfully.'
   when 9
     puts 'List of Authors:'
-    authors.each_with_index do |author, index|
-      puts "#{index + 1}. First Name: #{author.first_name}, Last Name: #{author.last_name}, ID: #{author.id}"
+    authors.each_with_index do |author_item, index|
+      puts "#{index + 1}. First Name: #{author_item.first_name}, Last Name: #{author_item.last_name}, ID: #{author_item.id}"
     end
   when 10
     puts 'List of Geners:'
-    genres.each_with_index do |genre, index|
-      puts "#{index + 1}. Genre Name: #{genre.name}, ID: #{genre.id}"
+    genres.each_with_index do |genre_item, index|
+      puts "#{index + 1}. Genre Name: #{genre_item.name}, ID: #{genre_item.id}"
     end
   when 11
     puts 'Exiting the application. Goodbye!'
