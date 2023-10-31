@@ -100,16 +100,16 @@ loop do
     first_name = gets.chomp
     print 'Last Name: '
     last_name = gets.chomp
-    author = Author.new(1, first_name, last_name)
-    authors << author
+    new_author = Author.new(1, first_name, last_name)
+    authors << new_author
     puts 'Author added successfully.'
     puts authors
   when 8
     puts 'Add genre:'
     print 'Genre Name: '
-    genre = gets.chomp
-    genre = Genre.new(1, genre)
-    genres << genre
+    new_genre = gets.chomp
+    genre = Genre.new(1, new_genre)
+    genres << new_genre
     puts 'Genre added successfully.'
   when 9
     puts 'List of Authors:'
