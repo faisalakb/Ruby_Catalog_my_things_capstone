@@ -1,12 +1,19 @@
 require 'date'
 require_relative 'items'
-require_relative 'book'
-require_relative 'label'
-require_relative 'game'
+# require_relative 'book'
+# require_relative 'label'
+# require_relative 'game'
+
+require_relative './Abdullah/author'
+require_relative './Abdullah/genre'
+require_relative './Abdullah/music'
 
 books = []
 labels = []
 games = []
+genres = []
+authors = []
+
 loop do
   puts "\nMain Menu:"
   puts '1. List all books'
@@ -15,7 +22,11 @@ loop do
   puts '4. Add a label'
   puts '5. List all games'
   puts '6. Add a game'
-  puts '7. Quit'
+  puts '7. Add an author'
+  puts '8. Add a genre'
+  puts '9. List Authors'
+  puts '10. List Genres'
+  puts '11. Quit'
   print 'Please choose an option: '
   choice = gets.chomp.to_i
   case choice
@@ -84,6 +95,33 @@ loop do
       puts 'Game added successfully.'
     end
   when 7
+    puts 'Add author:'
+    print 'First Name: '
+    first_name = gets.chomp
+    print 'Last Name: '
+    last_name = gets.chomp
+    author = Author.new(1, first_name, last_name)
+    authors << author
+    puts 'Author added successfully.'
+    puts authors
+  when 8
+    puts 'Add genre:'
+    print 'Genre Name: '
+    genre = gets.chomp
+    genre = Genre.new(1, genre)
+    genres << genre
+    puts 'Genre added successfully.'
+  when 9
+    puts 'List of Authors:'
+    authors.each_with_index do |author, index|
+      puts "#{index + 1}. First Name: #{author.first_name}, Last Name: #{author.last_name}, ID: #{author.id}"
+    end
+  when 10
+    puts 'List of Geners:'
+    genres.each_with_index do |genre, index|
+      puts "#{index + 1}. Genre Name: #{genre.name}, ID: #{genre.id}"
+    end
+  when 11
     puts 'Exiting the application. Goodbye!'
     break
   else
