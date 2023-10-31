@@ -1,7 +1,7 @@
 class Item
     attr_accessor :id, :genre, :author, :source, :label, :publish_date, :archived
   
-    def initialize(id, genre, author, source, label, publish_date, archived)
+    def initialize(id, genre, author, source, label, publish_date, archived:false)
       @id = id
       @genre = genre
       @author = author
@@ -13,7 +13,7 @@ class Item
   
     def can_be_archived?
       age_in_years = (Date.today - @publish_date).to_i / 365
-      age_in_years > 10
+      true if age_in_years > 10
     end
   
     def move_to_archive
