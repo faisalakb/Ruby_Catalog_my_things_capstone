@@ -6,7 +6,7 @@ require_relative '../items'
 class Genre
   attr_accessor :id, :name, :items
 
-  def initialize(id,name)
+  def initialize(_id, name)
     @id = Random.rand(1..1000)
     @name = name
     @items = []
@@ -19,7 +19,7 @@ class Genre
 
   def to_h
     {
-      'id' =>id,
+      'id' => id,
       'name' => name
     }
   end
