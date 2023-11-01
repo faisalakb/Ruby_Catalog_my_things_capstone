@@ -21,7 +21,9 @@ albums = []
 books = Book.load_books_from_json('books.json')
 labels = Label.load_labels_from_json('labels.json')
 games = Game.load_games_from_json('games.json')
-
+authors = Author.load_from_json('./DataBase/authors.json')
+genres = Genre.load_from_json('./DataBase/genres.json')
+albums = MusicAlbum.load_from_json('./DataBase/albums.json')
 loop do
   puts "\nMain Menu:"
   puts '1. List all books'
@@ -149,9 +151,9 @@ loop do
     Book.save_books_to_json(books, 'books.json')
     Game.save_games_to_json(games, 'games.json')
     Label.save_labels_to_json(labels, 'labels.json')
-
+    Author.save_to_json(authors, './DataBase/authors.json')
     Genre.save_to_json(genres, './DataBase/genres.json')
-
+    MusicAlbum.save_to_json(albums, './DataBase/albums.json')
     puts 'saving data in json files'
     break
   else
