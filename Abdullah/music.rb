@@ -5,9 +5,14 @@ require 'date'
 require_relative '../items'
 
 class MusicAlbum
-  attr_accessor :on_spotify
+  attr_accessor :id, :name, :genre, :singer, :on_spotify
 
-  def initialize(on_spotify)
+  def initialize(id, name, genre, singer, on_spotify)
+    super()
+    @id = Random.rand(1..1000)
+    @name = name
+    @genre = genre
+    @singer = singer
     @on_spotify = !!on_spotify
   end
 

@@ -15,6 +15,7 @@ labels = []
 games = []
 authors = []
 genres = []
+albums = []
 
 # Load book data from JSON files
 books = Book.load_books_from_json('books.json')
@@ -28,12 +29,14 @@ loop do
   puts '3. List all labels'
   puts '4. List all authors'
   puts '5. List all genres'
-  puts '6. Add a label'
-  puts '7. Add a book'
-  puts '8. Add a game'
-  puts '9. Add an author'
-  puts '10. Add a genre'
-  puts '11. Quit'
+  puts '6. List all Music Albums'
+  puts '7. Add a label'
+  puts '8. Add a book'
+  puts '9. Add a game'
+  puts '10. Add an author'
+  puts '11. Add a genre'
+  puts '12. Add a Music album'
+  puts '13. Quit'
 
   print 'Please choose an option: '
   choice = gets.chomp.to_i
@@ -65,6 +68,11 @@ loop do
       puts "#{index + 1}. Name: #{genre.name}"
     end
   when 6
+    puts 'List of Music Albums:'
+    albums.each_with_index do |album_item, index|
+      puts "#{index + 1}. Name: #{album_item.name}, Genre: #{album_item.genre}, Singer: #{album_item.singer},On spotify: #{album_item.on_spotify}"
+    end
+  when 7
     puts 'Add a new label:'
     print 'Title: '
     title = gets.chomp
@@ -73,7 +81,7 @@ loop do
     label = Label.new(labels.length + 1, title, color)
     labels << label
     puts 'Label added successfully.'
-  when 7
+  when 8
     puts 'Add a new book:'
     print 'Title: '
     title = gets.chomp
@@ -85,7 +93,7 @@ loop do
     books << book
     puts 'Book added successfully.'
 
-  when 8
+  when 9
     puts 'Add a new game:'
     print 'Genre: '
     genre_name = gets.chomp
@@ -96,7 +104,7 @@ loop do
     print 'Last Played At (YYYY-MM-DD): '
     last_played_at = Date.parse(gets.chomp)
     label = labels.find { |lbl| lbl.title == label_name }
-  
+
     if label.nil?
       puts 'Label not found. Please add the label first.'
     else
@@ -106,8 +114,7 @@ loop do
       puts 'Game added successfully.'
     end
 
-  
-  when 9
+  when 10
     puts 'Add an author:'
     print 'First Name: '
     first_name = gets.chomp
@@ -116,14 +123,27 @@ loop do
     author = Author.new(authors.length + 1, first_name, last_name)
     authors << author
     puts 'Author added successfully.'
-  when 10
+  when 11
     puts 'Add a genre:'
     print 'Name: '
     name = gets.chomp
     genre = Genre.new(name)
     genres << genre
     puts 'Genre added successfully.'
-  when 11
+  when 12
+    puts 'Add a Music Album:'
+    print 'Name: '
+    name = gets.chomp
+    print 'Genre: '
+    genre = gets.chomp
+    print 'Singer: '
+    singer = gets.chomp
+    print 'Is it on spotify (Y/N): '
+    on_spotify = gets.chomp
+    album = MusicAlbum.new(1, name, genre, singer, on_spotify)
+    albums << album
+    puts 'Music Album added successfully.'
+  when 13
     puts 'Exiting the application. Goodbye!'
     Book.save_books_to_json(books, 'books.json')
     Game.save_games_to_json(games, 'games.json')
