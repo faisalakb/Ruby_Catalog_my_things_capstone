@@ -18,12 +18,12 @@ genres = []
 albums = []
 
 # Load book data from JSON files
-books = Book.load_books_from_json('books.json')
-labels = Label.load_labels_from_json('labels.json')
-games = Game.load_games_from_json('games.json')
-authors = Author.load_from_json('./DataBase/authors.json')
-genres = Genre.load_from_json('./DataBase/genres.json')
-albums = MusicAlbum.load_from_json('./DataBase/albums.json')
+books = Book.load_books_from_json('./json/books.json')
+labels = Label.load_labels_from_json('./json/labels.json')
+games = Game.load_games_from_json('./json/games.json')
+authors = Author.load_from_json('./json/authors.json')
+genres = Genre.load_from_json('./json/genres.json')
+albums = MusicAlbum.load_from_json('./json/albums.json')
 loop do
   puts "\nMain Menu:"
   puts '1. List all books'
@@ -148,12 +148,12 @@ loop do
     puts 'Music Album added successfully.'
   when 13
     puts 'Exiting the application. Goodbye!'
-    Book.save_books_to_json(books, 'books.json')
-    Game.save_games_to_json(games, 'games.json')
-    Label.save_labels_to_json(labels, 'labels.json')
-    Author.save_to_json(authors, './DataBase/authors.json')
-    Genre.save_to_json(genres, './DataBase/genres.json')
-    MusicAlbum.save_to_json(albums, './DataBase/albums.json')
+    Book.save_books_to_json(books, './json/books.json')
+    Game.save_games_to_json(games, './json/games.json')
+    Label.save_labels_to_json(labels, './json/labels.json')
+    Author.save_to_json(authors, './json/authors.json')
+    Genre.save_to_json(genres, './json/genres.json')
+    MusicAlbum.save_to_json(albums, './json/albums.json')
     puts 'saving data in json files'
     break
   else
