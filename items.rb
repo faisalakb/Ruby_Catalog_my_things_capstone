@@ -1,15 +1,14 @@
 require 'date'
 
-
 class Item
   attr_accessor :id, :genre, :author, :source, :label, :publish_date, :archived
 
-  def initialize(id, genre, author, source, label, publish_date, archived)
+  def initialize(id, genre, author, source, _label, publish_date, archived)
     @id = id
     @genre = genre
     @author = author
     @source = source
-    @label = label
+    @label = labelrequire_relative '../label'
     @publish_date = publish_date
     @archived = archived
   end
@@ -19,20 +18,19 @@ class Item
     age_in_years > 10
   end
 
-  # Custom setter methods for 1-to-many relationships
-  def set_genre(genre)
+  def genre(genre)
     @genre = genre
   end
 
-  def set_author(author)
+  def author(author)
     @author = author
   end
 
-  def set_source(source)
+  def source(source)
     @source = source
   end
 
-  def set_label(label)
+  def label(label)
     @label = label
   end
 end

@@ -1,24 +1,21 @@
-class Book
-  attr_accessor :title, :author, :genre, :label, :publisher, :cover_state
+# Represents a book with various attributes such as title, author, genre, etc.
 
-  def initialize(title, author, genre, label, publisher, cover_state)
+class Book
+  attr_accessor :title, :author, :genre, :publisher, :cover_state, :label
+
+  def initialize(title, author, genre, publisher, cover_state)
     @title = title
     @author = author
     @genre = genre
-    @label = label
     @publisher = publisher
     @cover_state = cover_state
   end
 
   def can_be_archived?
-    super || @cover_state == "bad"
+    @cover_state == 'bad'
   end
 
   def add_item(item)
-    item.set_label(self)
-  end
-
-  def set_label(label)
-    @label = label
+    item.label = self
   end
 end
