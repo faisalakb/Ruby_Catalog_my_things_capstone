@@ -11,7 +11,7 @@ class Label
     @items = []
     @games = []
   end
-  
+
   def add_game(game)
     @games << game
   end

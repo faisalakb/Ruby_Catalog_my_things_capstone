@@ -7,7 +7,7 @@ require_relative '../items'
 class MusicAlbum
   attr_accessor :id, :name, :genre, :singer, :on_spotify
 
-  def initialize(id, name, genre, singer, on_spotify)
+  def initialize(_id, name, genre, singer, on_spotify)
     super()
     @id = Random.rand(1..1000)
     @name = name
