@@ -17,13 +17,14 @@ authors = []
 genres = []
 albums = []
 
-# Load book data from JSON files
-books = Book.load_books_from_json('books.json')
-labels = Label.load_labels_from_json('labels.json')
-games = Game.load_games_from_json('games.json')
-authors = Author.load_from_json('./DataBase/authors.json')
-genres = Genre.load_from_json('./DataBase/genres.json')
-albums = MusicAlbum.load_from_json('./DataBase/albums.json')
+# Load data from JSON files
+books = Book.load_books_from_json('./json/books.json')
+labels = Label.load_labels_from_json('./json/labels.json')
+games = Game.load_games_from_json('./json/games.json')
+authors = Author.load_from_json('./json/authors.json')
+genres = Genre.load_from_json('./json/genres.json')
+albums = MusicAlbum.load_from_json('./json/albums.json')
+
 loop do
   puts "\nMain Menu:"
   puts '1. List all books'
@@ -52,7 +53,8 @@ loop do
   when 2
     puts 'List of Games:'
     games.each_with_index do |game, index|
-      puts "#{index + 1}. Genre: #{game.genre}, Multiplayer: #{game.multiplayer}, Last Played At: #{game.last_played_at}, Archived: #{game.archived}"
+      puts "#{index + 1}. Genre: #{game.genre}, Multiplayer: #{game.multiplayer}, " \
+           "Last Played At: #{game.last_played_at}, Archived: #{game.archived}"
     end
   when 3
     puts 'List of Labels:'
@@ -72,7 +74,8 @@ loop do
   when 6
     puts 'List of Music Albums:'
     albums.each_with_index do |album_item, index|
-      puts "#{index + 1}. Name: #{album_item.name}, Genre: #{album_item.genre}, Singer: #{album_item.singer},On spotify: #{album_item.on_spotify}"
+      puts "#{index + 1}. Name: #{album_item.name}, Genre: #{album_item.genre}, " \
+           "Singer: #{album_item.singer}, On spotify: #{album_item.on_spotify}"
     end
   when 7
     puts 'Add a new label:'
@@ -94,7 +97,6 @@ loop do
     book = Book.new(title, publisher, cover_state)
     books << book
     puts 'Book added successfully.'
-
   when 9
     puts 'Add a new game:'
     print 'Genre: '
@@ -129,9 +131,8 @@ loop do
     puts 'Add a genre:'
     print 'Name: '
     name = gets.chomp
-    genre = Genre.new(name)
+    genre = Genre.new(1, name)
     genres << genre
-
     puts 'Genre added successfully.'
   when 12
     puts 'Add a Music Album:'
@@ -148,13 +149,13 @@ loop do
     puts 'Music Album added successfully.'
   when 13
     puts 'Exiting the application. Goodbye!'
-    Book.save_books_to_json(books, 'books.json')
-    Game.save_games_to_json(games, 'games.json')
-    Label.save_labels_to_json(labels, 'labels.json')
-    Author.save_to_json(authors, './DataBase/authors.json')
-    Genre.save_to_json(genres, './DataBase/genres.json')
-    MusicAlbum.save_to_json(albums, './DataBase/albums.json')
-    puts 'saving data in json files'
+    Book.save_books_to_json(books, './json/books.json')
+    Game.save_games_to_json(games, './json/games.json')
+    Label.save_labels_to_json(labels, './json/labels.json')
+    Author.save_to_json(authors, './json/authors.json')
+    Genre.save_to_json(genres, './json/genres.json')
+    MusicAlbum.save_to_json(albums, './json/albums.json')
+    puts 'Saving data in JSON files.'
     break
   else
     puts 'Invalid option. Please choose a valid option.'

@@ -14,7 +14,6 @@ class Book
   def can_be_archived?
     @cover_state == 'bad'
   end
-  
 
   def add_item(item)
     item.set_label(self)
