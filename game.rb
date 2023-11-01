@@ -45,4 +45,9 @@ class Game < Item
       file.write(JSON.generate(data))
     end
   end
+
+  def add_item(item)
+    item.label = self
+  end
+  
 end
