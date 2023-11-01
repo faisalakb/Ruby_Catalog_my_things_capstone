@@ -9,12 +9,17 @@ require_relative 'game'
 require_relative './Abdullah/author'
 require_relative './Abdullah/genre'
 require_relative './Abdullah/music'
+require 'json'
 
 labels = []
-books = []
 games = []
 authors = []
 genres = []
+
+# Load book data from JSON files
+books = Book.load_books_from_json('books.json')
+labels = Label.load_labels_from_json('labels.json')
+games = Game.load_games_from_json('games.json')
 
 loop do
   puts "\nMain Menu:"
@@ -79,6 +84,7 @@ loop do
     book = Book.new(title, publisher, cover_state)
     books << book
     puts 'Book added successfully.'
+
   when 8
     puts 'Add a new game:'
     print 'Genre: '
@@ -90,16 +96,17 @@ loop do
     print 'Last Played At (YYYY-MM-DD): '
     last_played_at = Date.parse(gets.chomp)
     label = labels.find { |lbl| lbl.title == label_name }
-
+  
     if label.nil?
       puts 'Label not found. Please add the label first.'
     else
       game = Game.new(games.length + 1, genre_name, label, multiplayer, last_played_at)
       games << game
-      label.add_item(game)
+      label.add_game(game)
       puts 'Game added successfully.'
     end
 
+  
   when 9
     puts 'Add an author:'
     print 'First Name: '
@@ -118,6 +125,10 @@ loop do
     puts 'Genre added successfully.'
   when 11
     puts 'Exiting the application. Goodbye!'
+    Book.save_books_to_json(books, 'books.json')
+    Game.save_games_to_json(games, 'games.json')
+    Label.save_labels_to_json(labels, 'labels.json')
+    puts 'saving data in json files'
     break
   else
     puts 'Invalid option. Please choose a valid option.'

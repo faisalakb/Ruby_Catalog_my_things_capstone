@@ -17,7 +17,32 @@ class Game < Item
     parent_result && age_in_years > 2
   end
 
-  def add_item(item)
-    item.set_label(self)
+  def to_h
+    {
+      'genre' => genre,
+      'label' => label.to_h, 
+      'multiplayer' => multiplayer,
+      'last_played_at' => last_played_at.to_s
+    }
+  end
+
+  def self.load_games_from_json(filename)
+    if File.exist?(filename)
+      json_data = File.read(filename)
+      games_data = JSON.parse(json_data)
+      games_data.map do |data|
+        label = Label.new(data['label']['id'], data['label']['title'], data['label']['color'])
+        Game.new(data['id'], data['genre'], label, data['multiplayer'], Date.parse(data['last_played_at']))
+      end
+    else
+      []
+    end
+  end
+
+  def self.save_games_to_json(games, filename)
+    File.open(filename, 'w') do |file|
+      data = games.map(&:to_h)
+      file.write(JSON.generate(data))
+    end
   end
 end
