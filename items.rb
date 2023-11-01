@@ -18,6 +18,13 @@ class Item
     age_in_years > 10
   end
 
+
+  def move_to_archive
+    return unless can_be_archived?
+
+    @archived = true
+  end
+
   # Custom setter methods for 1-to-many relationships
   def set_genre(genre)
     @genre = genre
