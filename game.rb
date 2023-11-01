@@ -1,3 +1,4 @@
+# Define the game class
 class Game < Item
   attr_accessor :multiplayer, :last_played_at
 
@@ -21,5 +22,4 @@ class Game < Item
   def set_label(label)
     @label = label
   end
-  
 end

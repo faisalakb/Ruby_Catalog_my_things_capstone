@@ -1,3 +1,4 @@
+# this is book class
 class Book
   attr_accessor :title, :author, :genre, :label, :publisher, :cover_state
 
@@ -11,7 +12,7 @@ class Book
   end
 
   def can_be_archived?
-    super || @cover_state == "bad"
+    super || @cover_state == 'bad'
   end
 
   def add_item(item)
@@ -21,5 +22,4 @@ class Book
   def set_label(label)
     @label = label
   end
-  
 end

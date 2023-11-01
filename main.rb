@@ -1,3 +1,4 @@
+# this is main class
 require 'date'
 require_relative 'items'
 require_relative 'book'
