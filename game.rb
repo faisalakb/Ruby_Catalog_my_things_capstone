@@ -1,6 +1,3 @@
-require 'date'
-require_relative 'items'
-
 class Game < Item
   attr_accessor :multiplayer, :last_played_at
 
@@ -12,11 +9,17 @@ class Game < Item
 
   def can_be_archived?
     parent_result = super
-    age_in_years = (Date.today - @last_played_at).to_i / 365
+    age_in years = (Date.today - @last_played_at).to_i / 365
+
     parent_result && age_in_years > 2
   end
 
   def add_item(item)
     item.set_label(self)
   end
+
+  def set_label(label)
+    @label = label
+  end
+  
 end
