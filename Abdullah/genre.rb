@@ -1,13 +1,15 @@
+# Define the genre class
+# frozen_string_literal: true
+
 require_relative '../items'
 
-class Genre < Item
-  attr_accessor :id, :name
+class Genre
+  attr_accessor :id, :name, :items
 
-  def initialize(_id, name, items = [])
-    super()
+  def initialize(name)
     @id = Random.rand(1..1000)
     @name = name
-    @items = items
+    @items = []
   end
 
   def add_item(item)

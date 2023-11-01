@@ -1,12 +1,11 @@
 # this is book class
-class Book
-  attr_accessor :title, :author, :genre, :label, :publisher, :cover_state
+# frozen_string_literal: true
 
-  def initialize(title, author, genre, label, publisher, cover_state)
+class Book
+  attr_accessor :title, :publisher, :cover_state
+
+  def initialize(title, publisher, cover_state)
     @title = title
-    @author = author
-    @genre = genre
-    @label = label
     @publisher = publisher
     @cover_state = cover_state
   end
@@ -17,9 +16,5 @@ class Book
 
   def add_item(item)
     item.set_label(self)
-  end
-
-  def set_label(label)
-    @label = label
   end
 end

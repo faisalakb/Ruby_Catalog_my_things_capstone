@@ -1,14 +1,16 @@
+# Define the author class
+# frozen_string_literal: true
+
 require_relative '../items'
 
-class Author < Item
-  attr_accessor :id, :first_name, :last_name
+class Author
+  attr_accessor :first_name, :last_name, :items
 
-  def initialize(_id, first_name, last_name, items = [])
-    super()
-    @id = Random.rand(1..1000)
+  def initialize(id, first_name, last_name)
+    @id = id
     @first_name = first_name
     @last_name = last_name
-    @items = items
+    @items = []
   end
 
   def add_item(item)

@@ -1,4 +1,6 @@
 # this is label class
+# frozen_string_literal: true
+
 class Label
   attr_accessor :id, :title, :color, :items
 
@@ -6,7 +8,7 @@ class Label
     @id = id
     @title = title
     @color = color
-    @items = [] # Initialize items as an empty array
+    @items = []
   end
 
   def add_item(item)

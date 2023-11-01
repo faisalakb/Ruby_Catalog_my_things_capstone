@@ -1,13 +1,15 @@
-# Define the Item class
-require 'date'
-class Item
-  attr_accessor :id, :genre, :author, :source, :label, :publish_date, :archived
+# Define the item class
+# frozen_string_literal: true
 
-  def initialize(id, genre, author, source, label, publish_date, archived)
+require 'date'
+
+class Item
+  attr_accessor :id, :genre, :author, :label, :publish_date, :archived
+
+  def initialize(id, genre, author, label, publish_date, archived)
     @id = id
     @genre = genre
     @author = author
-    @source = source
     @label = label
     @publish_date = publish_date
     @archived = archived
@@ -18,24 +20,18 @@ class Item
     age_in_years > 10
   end
 
-
   def move_to_archive
     return unless can_be_archived?
 
     @archived = true
   end
 
-  # Custom setter methods for 1-to-many relationships
   def set_genre(genre)
     @genre = genre
   end
 
   def set_author(author)
     @author = author
-  end
-
-  def set_source(source)
-    @source = source
   end
 
   def set_label(label)

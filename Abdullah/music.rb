@@ -1,16 +1,17 @@
+# Define the music class
+# frozen_string_literal: true
+
 require 'date'
 require_relative '../items'
 
-class MusicAlbum < Item
+class MusicAlbum
   attr_accessor :on_spotify
 
   def initialize(on_spotify)
-    super() # this will call any parent method so we can use it here
-
     @on_spotify = !!on_spotify
   end
 
   def can_be_archived?
-    super && @on_spotify # super call the parent similar method and check if onspotify is true
+    super && @on_spotify
   end
 end
