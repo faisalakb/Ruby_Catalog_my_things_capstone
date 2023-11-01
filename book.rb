@@ -10,8 +10,9 @@ class Book
   end
 
   def can_be_archived?
-    super || @cover_state == 'bad'
+    @cover_state == 'bad'
   end
+  
 
   def add_item(item)
     item.set_label(self)
