@@ -20,7 +20,7 @@ class Game < Item
   def to_h
     {
       'genre' => genre,
-      'label' => label.to_h, 
+      'label' => label.to_h,
       'multiplayer' => multiplayer,
       'last_played_at' => last_played_at.to_s
     }
