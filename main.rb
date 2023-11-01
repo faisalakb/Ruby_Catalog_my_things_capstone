@@ -129,6 +129,7 @@ loop do
     name = gets.chomp
     genre = Genre.new(name)
     genres << genre
+
     puts 'Genre added successfully.'
   when 12
     puts 'Add a Music Album:'
@@ -148,6 +149,9 @@ loop do
     Book.save_books_to_json(books, 'books.json')
     Game.save_games_to_json(games, 'games.json')
     Label.save_labels_to_json(labels, 'labels.json')
+
+    Genre.save_to_json(genres, './DataBase/genres.json')
+
     puts 'saving data in json files'
     break
   else
