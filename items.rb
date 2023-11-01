@@ -1,3 +1,5 @@
+# Define the Item class
+require 'date'
 class Item
   attr_accessor :id, :genre, :author, :source, :label, :publish_date, :archived
 
@@ -15,6 +17,7 @@ class Item
     age_in_years = (Date.today - @publish_date).to_i / 365
     age_in_years > 10
   end
+
 
   def move_to_archive
     return unless can_be_archived?
