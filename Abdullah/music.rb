@@ -4,19 +4,20 @@ require 'date'
 require_relative '../items'
 
 class MusicAlbum
-  attr_accessor :id, :name, :genre, :singer, :on_spotify
+  attr_accessor :id, :name, :genre, :singer, :on_spotify, :publish_date
 
-  def initialize(_id, name, genre, singer, on_spotify)
-    super()
-    @id = Random.rand(1..1000)
+  def initialize(id, name, genre, singer, on_spotify)
+    @id = id
     @name = name
     @genre = genre
     @singer = singer
     @on_spotify = !!on_spotify
+    @publish_date = Date.today
   end
 
   def can_be_archived?
-    super && @on_spotify
+    age_in_years = (Date.today - @publish_date).to_i / 365
+    age_in_years > 10 && @on_spotify
   end
 
   def to_h
