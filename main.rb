@@ -73,8 +73,8 @@ loop do
   when 6
     puts 'List of Music Albums:'
     albums.each_with_index do |album_item, index|
-      puts "#{index + 1}. Name: #{album_item.name}, Genre: #{album_item.genre}, " \
-           "Singer: #{album_item.singer}, On spotify: #{album_item.on_spotify}"
+      puts "#{index + 1}. Name: #{album_item.name}, Genre: #{album_item.genre}, Singer: #{album_item.singer}, Published Date: #{album_item.publish_date}, On spotify: #{album_item.on_spotify}"
+
     end
   when 7
     puts 'Add a new label:'
@@ -141,9 +141,11 @@ loop do
     genre = gets.chomp
     print 'Singer: '
     singer = gets.chomp
+    print 'Published Date (mm/dd/yyyy): '
+    publish_date = gets.chomp
     print 'Is it on spotify (Y/N): '
     on_spotify = gets.chomp
-    album = MusicAlbum.new(1, name, genre, singer, on_spotify)
+    album = MusicAlbum.new(1, name, genre, singer, publish_date, on_spotify)
     albums << album
     puts 'Music Album added successfully.'
   when 13
