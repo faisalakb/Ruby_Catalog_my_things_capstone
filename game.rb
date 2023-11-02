@@ -1,5 +1,4 @@
 # Define the game class
-# frozen_string_literal: true
 
 class Game < Item
   attr_accessor :multiplayer, :last_played_at
@@ -49,5 +48,4 @@ class Game < Item
   def add_item(item)
     item.label = self
   end
-  
 end

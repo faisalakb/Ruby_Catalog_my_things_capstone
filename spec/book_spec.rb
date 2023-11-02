@@ -1,5 +1,7 @@
+# Define the book unit tests
+
 require 'rspec'
-require_relative '../book.rb'
+require_relative '../book'
 
 RSpec.describe Book do
   let(:book) do

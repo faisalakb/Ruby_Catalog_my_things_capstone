@@ -1,3 +1,5 @@
+# Define the label unit tests
+
 require_relative '../items'
 require_relative '../label'
 require_relative '../game'
