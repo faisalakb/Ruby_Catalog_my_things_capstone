@@ -1,7 +1,4 @@
-require 'rspec'
 require_relative '../Abdullah/author'
-require_relative '../items'
-
 
 describe Author do
   let(:sample_author) { Author.new(1, 'John', 'Doe') }

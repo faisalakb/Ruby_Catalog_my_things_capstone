@@ -1,32 +1,31 @@
-require 'rspec'
-require_relative '../book.rb'
+require_relative '../Abdullah/genre'
 
-RSpec.describe Book do
-  let(:book) do
-    Book.new('Sample Title', 'Sample Publisher', 'Good')
-  end
+describe Genre do
+  let(:sample_genre) { Genre.new(1, 'Action') }
 
-  describe '#can_be_archived?' do
-    context 'when cover state is bad' do
-      it 'returns true' do
-        book.cover_state = 'bad'
-        expect(book.can_be_archived?).to be_truthy
-      end
+  describe '#initialize' do
+    it 'sets the id and name correctly' do
+      expect(sample_genre.id).to be_an(Integer)
+      expect(sample_genre.name).to eq('Action')
     end
 
-    context 'when cover state is good' do
-      it 'returns false' do
-        book.cover_state = 'good'
-        expect(book.can_be_archived?).to be_falsy
-      end
+    it 'initializes an empty items array' do
+      expect(sample_genre.items).to be_an(Array)
+      expect(sample_genre.items).to be_empty
     end
   end
 
   describe '#add_item' do
-    it 'calls set_label on the added item with self as an argument' do
-      item = double('Item')
-      expect(item).to receive(:set_label).with(book)
-      book.add_item(item)
+    it 'adds an item to the genre' do
+      item = double('item', set_genre: nil)  # Use a test double with set_genre method
+      sample_genre.add_item(item)
+      expect(sample_genre.items).to include(item)
+    end
+
+    it 'sets the genre of the added item to self' do
+      item = double('item', set_genre: nil)  # Use a test double with set_genre method
+      expect(item).to receive(:set_genre).with(sample_genre)
+      sample_genre.add_item(item)
     end
   end
 end
