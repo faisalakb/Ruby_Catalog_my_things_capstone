@@ -1,7 +1,3 @@
-# Author class represents an author of items.
-# Define the author class
-# frozen_string_literal: true
-
 require_relative '../items'
 
 class Author

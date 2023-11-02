@@ -1,5 +1,4 @@
 # Define the genre class
-# frozen_string_literal: true
 
 require_relative '../items'
 

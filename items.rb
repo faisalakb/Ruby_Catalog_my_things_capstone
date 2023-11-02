@@ -1,5 +1,4 @@
 # Define the item class
-# frozen_string_literal: true
 
 require 'date'
 

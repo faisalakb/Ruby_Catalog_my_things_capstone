@@ -1,14 +1,13 @@
 # Define the main class
-# frozen_string_literal: true
 
 require 'date'
 require_relative 'items'
 require_relative 'book'
 require_relative 'label'
 require_relative 'game'
-require_relative './Abdullah/author'
-require_relative './Abdullah/genre'
-require_relative './Abdullah/music'
+require_relative 'Abdullah/author'
+require_relative 'Abdullah/genre'
+require_relative 'Abdullah/music'
 require 'json'
 
 labels = []
