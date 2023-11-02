@@ -4,15 +4,15 @@
 require 'date'
 require_relative '../items'
 
-class MusicAlbum
-  attr_accessor :id, :name, :genre, :singer, :on_spotify
+class MusicAlbum < Item
+  attr_accessor :name, :genre, :singer, :publish_date, :on_spotify
 
-  def initialize(_id, name, genre, singer, on_spotify)
-    super()
+  def initialize(id, name, genre, singer, publish_date, on_spotify)
     @id = Random.rand(1..1000)
     @name = name
     @genre = genre
     @singer = singer
+    @publish_date = publish_date
     @on_spotify = !!on_spotify
   end
 
@@ -26,6 +26,7 @@ class MusicAlbum
       'name' => name,
       'genre' => genre,
       'singer' => singer,
+      'published date' => publish_date,
       'on spotify' => on_spotify
     }
   end
@@ -35,7 +36,8 @@ class MusicAlbum
       json_data = File.read(filename)
       albums_data = JSON.parse(json_data)
       albums_data.map do |data|
-        MusicAlbum.new(data['id'], data['name'], data['genre'], data['singer'], data['on spotify'])
+        MusicAlbum.new(data['id'], data['name'], data['genre'], data['singer'], data['published date'],
+                       data['on spotify'])
       end
     else
       []
