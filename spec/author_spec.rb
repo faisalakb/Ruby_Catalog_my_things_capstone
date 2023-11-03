@@ -21,7 +21,7 @@ describe Author do
       item = Item.new(1, 'Action', 'Sample Item', 'Source', Date.new(2022, 1, 1), false)
       sample_author.add_item(item)
       expect(sample_author.items).to include(item)
-      expect(item.author).to eq(sample_author)  # Ensure the author of the item is set to the author
+      expect(item.author).to eq(sample_author) # Ensure the author of the item is set to the author
     end
   end
 end
