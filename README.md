@@ -8,7 +8,7 @@
   <h3><b>Ruby_Catalog_my_things_capstone</b></h3>
   <p>"Catalog of my things" is a simple console app that allows users to manage collections of the things they own. It's based on the following UML class diagram. </p>
   
-   ## [video]( https://drive.google.com/file/d/1PVDa5IsHZv1NH-xKRAF-N8obu7wOZLIW/view?usp=drive_link) ##
+   ## [video](https://drive.google.com/file/d/1PVDa5IsHZv1NH-xKRAF-N8obu7wOZLIW/view?usp=sharing) ##
 
   <img src='./assets/catalog_of_my_things.png'/>
 
@@ -57,7 +57,7 @@
 - Add simple terminal user interface for user interaction
 - Save records to json files
 - Load records from json files
-- Add the layout schema files to be used in the future to link the app with sql database 
+- Add the layout schema files to be used in the future to link the app with sql database
 - Rspec test Units for all methods used on each class
 - Used linter workflow for more organized code
 
@@ -69,9 +69,8 @@
 
 - Link the project to a sql database
 - Make a graphical user interface
- 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -83,7 +82,7 @@ To get a local copy up and running, follow these steps:
 - Navigate to the desired directory[folder] to which you want to clone the repository to
 - git clone you find in the code button https://github.com/faisalakb/Ruby_Catalog_my_things_capstone.git
 - Run `blunder i` to install the gemfiles to your end
-- To run the app `ruby main.rb` you will see the user interface 
+- To run the app `ruby main.rb` you will see the user interface
 
 ### Prerequisites
 
@@ -95,7 +94,7 @@ To run and modify this project you need:
 - basic Knowledge of Git Commands
 - basic Knowledge of the Terminal Commands
 - Ruby language
-- PostgreSQL 
+- PostgreSQL
 
 ### Setup
 
@@ -111,10 +110,10 @@ Example commands:
 
 ```
 
-
 ### Install
 
 To install all dependencies run the following command:
+
 - `gem install` will install all the gem files included in this repo
 - if you have the gem bundler installed type in `bundler i`
 - to run the program `ruby main.rb`
@@ -127,15 +126,15 @@ suggusted VSC extentions:
 - [code spell checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 - [ruby solargraph](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
- **Faisal Mumtaz**
 
- - GitHub: @faisalakb
- - Twitter: @faisalakb786
- - LinkedIn: LinkedIn
+**Faisal Mumtaz**
+
+- GitHub: @faisalakb
+- Twitter: @faisalakb786
+- LinkedIn: LinkedIn
 
 👤 **GeekyHacks**
 
@@ -163,6 +162,7 @@ people.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank...
+
 - Microverse Review Team
 - Microverse Community in Slack
 - My coding partner @geekyhacks
@@ -172,9 +172,10 @@ I would like to thank...
 ## ❓ FAQ <a name="faq"></a>
 
 Can I clone this project ?\*\*
+
 - Of course you can as long as you fork it and star it
-Can I contribute to this project?\*\*
-- all contributions are welcomed 
+  Can I contribute to this project?\*\*
+- all contributions are welcomed
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
