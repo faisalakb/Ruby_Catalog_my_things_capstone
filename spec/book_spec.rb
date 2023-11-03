@@ -25,9 +25,9 @@ RSpec.describe Book do
   end
 
   describe '#add_item' do
-    it 'calls set_label on the added item with self as an argument' do
+    it 'calls slabel on the added item with self as an argument' do
       item = double('Item')
-      expect(item).to receive(:set_label).with(book)
+      expect(item).to receive(:slabel).with(book)
       book.add_item(item)
     end
   end

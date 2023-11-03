@@ -3,21 +3,22 @@
 require 'date'
 require_relative '../items'
 
-class MusicAlbum
-  attr_accessor :id, :name, :genre, :singer, :on_spotify, :publish_date
+class MusicAlbum < Item
+  attr_accessor :name, :genre, :singer, :publish_date, :on_spotify
 
-  def initialize(id, name, genre, singer, on_spotify)
-    @id = id
+  def initialize(id, name, genre, singer, publish_date, on_spotify)
+    super(id, genre, nil, nil, publish_date, false)
     @name = name
     @genre = genre
     @singer = singer
-    @on_spotify = !!on_spotify
-    @publish_date = Date.today
+    @publish_date = publish_date
+    @on_spotify = on_spotify
   end
 
   def can_be_archived?
-    age_in_years = (Date.today - @publish_date).to_i / 365
-    age_in_years > 10 && @on_spotify
+    return true if on_spotify
+
+    false
   end
 
   def to_h
@@ -26,6 +27,7 @@ class MusicAlbum
       'name' => name,
       'genre' => genre,
       'singer' => singer,
+      'published date' => publish_date,
       'on spotify' => on_spotify
     }
   end
@@ -35,7 +37,8 @@ class MusicAlbum
       json_data = File.read(filename)
       albums_data = JSON.parse(json_data)
       albums_data.map do |data|
-        MusicAlbum.new(data['id'], data['name'], data['genre'], data['singer'], data['on spotify'])
+        MusicAlbum.new(data['id'], data['name'], data['genre'], data['singer'], data['published date'],
+                       data['on spotify'])
       end
     else
       []
