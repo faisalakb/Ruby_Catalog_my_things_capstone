@@ -25,15 +25,15 @@ class Item
     @archived = true
   end
 
-  def set_genre(genre)
+  def sgenre(genre)
     @genre = genre
   end
 
-  def set_author(author)
+  def sauthor(author)
     @author = author
   end
 
-  def set_label(label)
+  def slabel(label)
     @label = label
   end
 end

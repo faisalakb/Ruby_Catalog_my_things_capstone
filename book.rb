@@ -14,7 +14,7 @@ class Book
   end
 
   def add_item(item)
-    item.set_label(self)
+    item.slabel(self)
   end
 
   def to_h

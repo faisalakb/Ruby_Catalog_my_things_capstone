@@ -6,14 +6,13 @@ require_relative '../items'
 class MusicAlbum < Item
   attr_accessor :name, :genre, :singer, :publish_date, :on_spotify
 
-  def initialize(_id, name, genre, singer, publish_date, on_spotify)
-    @id = Random.rand(1..1000)
+  def initialize(id, name, genre, singer, publish_date, on_spotify)
+    super(id, genre, nil, nil, publish_date, false)
     @name = name
     @genre = genre
     @singer = singer
     @publish_date = publish_date
     @on_spotify = on_spotify
-    @publish_date = Date.today
   end
 
   def can_be_archived?

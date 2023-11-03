@@ -17,14 +17,14 @@ describe Genre do
 
   describe '#add_item' do
     it 'adds an item to the genre' do
-      item = double('item', set_genre: nil) # Use a test double with set_genre method
+      item = double('item', sgenre: nil) # Use a test double with set_genre method
       sample_genre.add_item(item)
       expect(sample_genre.items).to include(item)
     end
 
     it 'sets the genre of the added item to self' do
-      item = double('item', set_genre: nil) # Use a test double with set_genre method
-      expect(item).to receive(:set_genre).with(sample_genre)
+      item = double('item', sgenre: nil) # Use a test double with set_genre method
+      expect(item).to receive(:sgenre).with(sample_genre)
       sample_genre.add_item(item)
     end
   end
