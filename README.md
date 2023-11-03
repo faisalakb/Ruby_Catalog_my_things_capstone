@@ -51,8 +51,13 @@
 
 </a>
 
-- Add the logical ruby classes and modules
+- Add the logic for all ruby classes and their methods according to the UML graph
+- Add simple terminal user interface for user interaction
 - Save records to json files
+- Load records from json files
+- Add the layout schema files to be used in the future to link the app with sql database 
+- Rspec test Units for all methods used on each class
+- Used linter workflow for more organized code
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -60,9 +65,8 @@
 
 </a>
 
-- add basic UI
-- preserve data
-- add unit tests
+- Link the project to a sql database
+- Make a graphical user interface
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,6 +80,8 @@ To get a local copy up and running, follow these steps:
 - Open your Terminal in your VSCode.
 - Navigate to the desired directory[folder] to which you want to clone the repository to
 - git clone you find in the code button https://github.com/faisalakb/Ruby_Catalog_my_things_capstone.git
+- Run `blunder i` to install the gemfiles to your end
+- To run the app `ruby main.rb` you will see the user interface 
 
 ### Prerequisites
 
@@ -109,13 +115,16 @@ Example commands:
 To install all dependencies run the following command:
 - `gem install` will install all the gem files included in this repo
 - if you have the gem bundler installed type in `bundler i`
-- to run the program *will be added soon*
+- to run the program `ruby main.rb`
 
 suggusted VSC extentions:
 
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) Extention in VScode
 - [Microsoft Edge Tools for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools)
 - [Save Typing](https://marketplace.visualstudio.com/items?itemName=akhail.save-typing)
+- [code spell checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [ruby solargraph](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -152,9 +161,6 @@ people.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank...
-
--The incredible [tielabs](https://tielabs.com/product/sahifa-theme/) UI design
-
 - Microverse Review Team
 - Microverse Community in Slack
 - My coding partner @geekyhacks
@@ -164,12 +170,9 @@ I would like to thank...
 ## ❓ FAQ <a name="faq"></a>
 
 Can I clone this project ?\*\*
-
 - Of course you can as long as you fork it and star it
-
 Can I contribute to this project?\*\*
-
-- definitely you can
+- all contributions are welcomed 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
