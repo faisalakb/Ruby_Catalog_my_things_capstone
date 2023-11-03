@@ -7,6 +7,8 @@
 
   <h3><b>Ruby_Catalog_my_things_capstone</b></h3>
   <p>"Catalog of my things" is a simple console app that allows users to manage collections of the things they own. It's based on the following UML class diagram. </p>
+  
+   ## [video]( https://drive.google.com/file/d/1PVDa5IsHZv1NH-xKRAF-N8obu7wOZLIW/view?usp=drive_link) ##
 
   <img src='./assets/catalog_of_my_things.png'/>
 
