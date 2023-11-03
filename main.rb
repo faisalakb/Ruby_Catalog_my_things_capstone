@@ -144,7 +144,8 @@ loop do
     print 'Published Date (mm/dd/yyyy): '
     publish_date = gets.chomp
     print 'Is it on spotify (Y/N): '
-    on_spotify = gets.chomp
+    input = gets.chomp
+    on_spotify = input.upcase == 'Y'
     album = MusicAlbum.new(1, name, genre, singer, publish_date, on_spotify)
     albums << album
     puts 'Music Album added successfully.'

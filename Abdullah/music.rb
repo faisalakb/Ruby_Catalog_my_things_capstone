@@ -13,7 +13,7 @@ class MusicAlbum < Item
     @genre = genre
     @singer = singer
     @publish_date = publish_date
-    @on_spotify = on_spotify
+    @on_spotify = !!on_spotify
     @publish_date = Date.today
   end
 
